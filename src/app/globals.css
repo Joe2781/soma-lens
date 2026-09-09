@@ -1,0 +1,115 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-white text-soma-900 dark:bg-soma-950 dark:text-soma-50;
+  }
+
+  code {
+    @apply font-mono text-sm;
+  }
+}
+
+@layer components {
+  .container-soma {
+    @apply max-w-7xl mx-auto px-md;
+  }
+
+  .text-display {
+    @apply text-4xl font-bold tracking-tight lg:text-5xl;
+  }
+
+  .text-headline {
+    @apply text-2xl font-bold tracking-tight;
+  }
+
+  .text-subheading {
+    @apply text-xl font-semibold;
+  }
+
+  .prose-soma {
+    @apply text-base leading-relaxed text-soma-800 dark:text-soma-200;
+  }
+
+  .button-primary {
+    @apply px-lg py-md bg-soma-600 text-white rounded-md hover:bg-soma-700 transition-colors focus:outline-none focus:ring-2 focus:ring-soma-500 focus:ring-offset-2 dark:focus:ring-offset-soma-950 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .button-secondary {
+    @apply px-lg py-md bg-soma-100 text-soma-900 rounded-md hover:bg-soma-200 transition-colors dark:bg-soma-800 dark:text-soma-50 dark:hover:bg-soma-700 focus:outline-none focus:ring-2 focus:ring-soma-500 focus:ring-offset-2 dark:focus:ring-offset-soma-950 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .card-soma {
+    @apply bg-white dark:bg-soma-900 border border-soma-200 dark:border-soma-800 rounded-lg p-lg;
+  }
+
+  .input-soma {
+    @apply w-full px-md py-sm bg-white dark:bg-soma-900 border border-soma-300 dark:border-soma-700 rounded-md text-soma-900 dark:text-soma-50 placeholder-soma-500 dark:placeholder-soma-400 focus:outline-none focus:ring-2 focus:ring-soma-500 focus:border-transparent;
+  }
+}
+
+/* Code highlighting */
+.code-block {
+  @apply bg-soma-900 text-soma-50 rounded-lg overflow-hidden;
+}
+
+.code-block pre {
+  @apply p-lg overflow-x-auto;
+}
+
+.code-block code {
+  @apply text-sm font-mono;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  @apply animate-[fade-in_0.3s_ease-in-out];
+}
+
+.animate-slide-up {
+  @apply animate-[slide-up_0.3s_ease-out];
+}
+
+/* Dark mode smooth transition */
+html.dark {
+  color-scheme: dark;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-soma-100 dark:bg-soma-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-soma-300 dark:bg-soma-700 rounded hover:bg-soma-400 dark:hover:bg-soma-600;
+}
